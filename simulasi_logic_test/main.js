@@ -5,7 +5,7 @@ function nomorSatu(num) {
             console.log(i + '-' +'I Love Coding')
         }else if( i % 2 !== 0){
             console.log( i + '-' +'Santai')
-        }else if( i % 2 == 0){
+        }else{
             console.log( i + '-' +'Berkualitas')
         }
     }
@@ -19,12 +19,12 @@ function nomorDua(size){
     var board = "";
 
     for (var y = 0; y < size; y++) {
-    for (var x = 0; x < size; x++) {
-        if ((x + y) % 2 == 0){
-        board += " ";
-        }else
-        board += "#";
-    }
+        for (var x = 0; x < size; x++) {
+            if ((x + y) % 2 == 0){
+            board += " ";
+            }else
+            board += "#";
+        }
     board += "\n";
     }
 
@@ -40,7 +40,7 @@ let params = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1998", "Membaca
         }else if(i == 2){
             params.splice(2,1, 'Provinsi Bandar Lampung')
         }else if(i == 4){
-            params.splice(3,3, '21/05/1998', 'Pria', 'SMA Internasional Metro')
+            params.splice(3,3, '21/07/1998', 'Pria', 'SMA Internasional Metro')
         }
     }
 
@@ -87,3 +87,16 @@ switch(month){
         console.log("Desember")
 
 }
+
+
+
+const datesort = params[3].split("/").sort((a,b) =>b-a)
+console.log(datesort)
+
+const dateJoin = params[3].split("/").join("-")
+console.log(dateJoin)
+
+let name = params[1]
+
+name = name.slice(0, 15)
+console.log(name)
